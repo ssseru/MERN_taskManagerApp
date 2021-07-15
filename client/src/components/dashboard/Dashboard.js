@@ -43,7 +43,7 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     const tasksList = this.state.tasks.map((task) => (
       <div className="container" key={task._id}>
-        <Card style={{ background: "white" }}>
+        <Card style={{ background: "papayawhip" }}>
           <div>
             Task title:<b> {task.task}</b>
             <br />

@@ -5,7 +5,7 @@ class Navbar extends Component {
     return (
       <div className="navbar-fixed">
         <nav className="z-depth-0">
-          <div className="nav-wrapper orange">
+          <div className="nav-wrapper" style={{ backgroundColor: "cyan" }}>
             <Link
               to="/"
               style={{
@@ -13,7 +13,9 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center black-text"
             >
-              <i className="material-icons">home</i>
+              <i className="material-icons" style={{ backgroundColor: "cyan" }}>
+                home
+              </i>
               Task Manager
             </Link>
           </div>
