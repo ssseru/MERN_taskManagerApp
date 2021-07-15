@@ -70,7 +70,7 @@ class Dashboard extends Component {
     return (
       <div style={{ height: "75vh" }} className="container ">
         <div className="row">
-          <div className="col s6 center-align">
+          <div className="col m6 center-align">
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
@@ -96,7 +96,7 @@ class Dashboard extends Component {
               </button>
             </div>
           </div>
-          <div className="col s6 center-align">
+          <div className="col m6 center-align">
             <div>
               {tasksList.length > 0 ? (
                 <div>
