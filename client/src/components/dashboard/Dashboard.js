@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import Addtask from "./Addtask";
+import Addtask from "./AddTask";
 import axios from "axios";
 import { Card, Button } from "reactstrap";
 

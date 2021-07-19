@@ -1,62 +1,49 @@
 import axios from "axios";
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Button, FormGroup, Label, Input, Form } from "reactstrap";
 
-export default class Addtask extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      task: "",
-      description: "",
-    };
+export default function Addtask(props) {
+  const [t, setT] = useState("");
+  const [d, setD] = useState("");
 
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
-  onSubmit(e) {
+  function onSubmit(e) {
     e.preventDefault();
-    const task = {
-      task: this.state.task,
-      description: this.state.description,
+    const x = {
+      task: t,
+      description: d,
     };
-    const userid = this.props.id;
-    axios.post("api/tasks/add/" + userid, task);
-    this.setState({ task: "", description: "" });
+    const userid = props.id;
+    axios.post("api/tasks/add/" + userid, x).then((res) => console.log(res));
+    setT("");
+    setD("");
   }
 
-  render() {
-    return (
-      <Form onSubmit={this.onSubmit}>
-        <FormGroup>
-          <Label for="task">Task title:</Label>
-          <Input
-            type="text"
-            id="task"
-            name="task"
-            value={this.state.task}
-            onChange={this.onChange}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="description">Description:</Label>
-          <Input
-            type="text"
-            name="description"
-            id="description"
-            value={this.state.description}
-            onChange={this.onChange}
-          />
-        </FormGroup>
-        <br />
-        <Button type="submit" value="submit" color="primary">
-          Add task
-        </Button>
-      </Form>
-    );
-  }
+  return (
+    <Form onSubmit={onSubmit}>
+      <FormGroup>
+        <Label for="task">Task title:</Label>
+        <Input
+          type="text"
+          id="task"
+          name="task"
+          value={t}
+          onChange={(e) => setT(e.target.value)}
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="description">Description:</Label>
+        <Input
+          type="text"
+          name="description"
+          id="description"
+          value={d}
+          onChange={(e) => setD(e.target.value)}
+        />
+      </FormGroup>
+      <br />
+      <Button type="submit" value="submit" color="primary">
+        Add task
+      </Button>
+    </Form>
+  );
 }
