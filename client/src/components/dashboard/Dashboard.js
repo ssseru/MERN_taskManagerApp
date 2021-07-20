@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import Addtask from "./AddTask";
+import AddTask from "./AddTask";
 import axios from "axios";
 import { Card, Button } from "reactstrap";
 
@@ -35,7 +35,7 @@ function Dashboard(props) {
             <p className="flow-text grey-text text-darken-1">Add a new Task </p>
           </h4>
           <div>
-            <Addtask id={props.auth.user.id} />
+            <AddTask id={props.auth.user.id} />
             <br />
             <br />
             <br />

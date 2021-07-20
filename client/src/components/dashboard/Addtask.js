@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Button, FormGroup, Label, Input, Form } from "reactstrap";
 
-export default function Addtask(props) {
+export default function AddTask(props) {
   const [t, setT] = useState("");
   const [d, setD] = useState("");
 
