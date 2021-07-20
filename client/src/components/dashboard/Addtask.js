@@ -13,7 +13,7 @@ export default function Addtask(props) {
       description: d,
     };
     const userid = props.id;
-    axios.post("api/tasks/add/" + userid, x).then((res) => console.log(res));
+    axios.post("api/tasks/add/" + userid, x);
     setT("");
     setD("");
   }
